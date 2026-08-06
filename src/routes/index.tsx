@@ -289,7 +289,7 @@ function Index() {
               <svg
                 viewBox="0 0 200 200"
                 aria-hidden="true"
-                className="pointer-events-none absolute -top-12 -left-12 h-[125%] w-[125%] text-primary-soft"
+                className="pointer-events-none absolute -top-12 -left-12 h-[125%] w-[125%] text-surface"
               >
                 <path
                   fill="currentColor"
