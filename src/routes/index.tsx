@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Bath, MapPin, PackageOpen, Star, Truck } from "lucide-react";
+import { Bath, MapPin, PackageOpen, PawPrint, Star, Truck } from "lucide-react";
 import type { ReactNode } from "react";
 
 import logoAsset from "../assets/image.png.asset.json";
@@ -58,14 +58,17 @@ const GALLERY = [
   {
     src: galeria1Asset.url,
     alt: "Lulu da Pomerânia tosado em cenário de futebol no Pet Shop Uirapuru",
+    caption: "Torcedor oficial da casa",
   },
   {
     src: galeria2Asset.url,
     alt: "Chihuahua com chapéu de palha em cenário de festa junina no Pet Shop Uirapuru",
+    caption: "Pronto pra festa junina",
   },
   {
     src: galeria3Asset.url,
     alt: "Três shih tzus tosados em cenário de carnaval no Pet Shop Uirapuru",
+    caption: "Dia de banho, dia de festa",
   },
 ];
 
