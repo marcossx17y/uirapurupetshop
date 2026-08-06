@@ -289,7 +289,7 @@ function Index() {
               <svg
                 viewBox="0 0 200 200"
                 aria-hidden="true"
-                className="pointer-events-none absolute -inset-10 -z-10 h-[125%] w-[125%] text-primary-soft"
+                className="pointer-events-none absolute -top-12 -left-12 h-[125%] w-[125%] text-primary-soft"
               >
                 <path
                   fill="currentColor"
@@ -297,7 +297,7 @@ function Index() {
                   transform="translate(100 100)"
                 />
               </svg>
-              <div className="frame-photo">
+              <div className="frame-photo relative">
                 <img
                   src={spitzAsset.url}
                   width={783}
