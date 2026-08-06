@@ -283,8 +283,7 @@ function Index() {
               {GALLERY.map((photo, i) => (
                 <div
                   key={photo.alt}
-                  className="frame-photo hover:rotate-0"
-                  style={{ rotate: i % 2 === 0 ? "-2deg" : "2deg" }}
+                  className={`frame-photo ${i % 2 === 0 ? "tilt-a" : "tilt-b"}`}
                 >
                   <img
                     src={photo.src}
