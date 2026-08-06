@@ -75,7 +75,7 @@
   --whatsapp: oklch(0.735 0.183 149.5);
   --whatsapp-foreground: oklch(1 0 0);
   --rating: oklch(0.58 0.21 27);
-  --surface: oklch(0.979 0.004 236);
+  --surface: oklch(0.958 0.019 232);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.271 0.02 250);
   --muted: oklch(0.968 0.007 247.896);
@@ -108,7 +108,8 @@
   --color-whatsapp-foreground: var(--whatsapp-foreground);
   --color-rating: var(--rating);
   --color-surface: var(--surface);
-  --font-display: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-hand: "Caveat", ui-serif, cursive;
   --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
   --shadow-soft: 0 2px 8px -2px oklch(0.271 0.02 250 / 0.06), 0 12px 32px -12px oklch(0.271 0.02 250 / 0.1);
   --shadow-frame: 0 4px 14px -4px oklch(0.271 0.02 250 / 0.1), 0 24px 48px -24px oklch(0.271 0.02 250 / 0.18);
@@ -166,7 +167,33 @@
   h4 {
     font-family: var(--font-display);
     font-weight: 700;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility font-hand {
+  font-family: var(--font-hand);
+}
+
+@utility service-card {
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-frame);
+  }
+
+  & .service-icon {
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  &:hover .service-icon {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
   }
 }
 
