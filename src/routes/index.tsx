@@ -196,12 +196,30 @@ function WhatsAppButton({ children, size = "md" }: { children: ReactNode; size?:
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-flex items-center justify-center gap-2 rounded-2xl bg-whatsapp font-semibold text-whatsapp-foreground shadow-soft transition hover:brightness-95 ${
-        size === "lg" ? "px-7 py-4 text-base" : "px-4 py-2.5 text-sm"
+        size === "lg" ? "px-8 py-4 text-base" : "px-4 py-2.5 text-sm"
       }`}
     >
       <WhatsAppIcon className={size === "lg" ? "size-5" : "size-4"} />
       {children}
     </a>
+  );
+}
+
+function Wave({ to }: { to: "surface" | "background" }) {
+  return (
+    <svg
+      viewBox="0 0 1440 90"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+      className={`block h-12 w-full sm:h-[90px] ${
+        to === "surface" ? "text-surface" : "text-background"
+      }`}
+    >
+      <path
+        fill="currentColor"
+        d="M0 40c180 42 360 55 540 34 180-20 300-62 480-62s540 68 420 78H0Z"
+      />
+    </svg>
   );
 }
 
@@ -223,41 +241,84 @@ function Index() {
         </div>
       </header>
       <main>
-        <section className="bg-background">
-          <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-[1.05fr_0.95fr] md:py-24">
-            <div>
+        <section className="relative overflow-hidden bg-background">
+          <PawPrint
+            aria-hidden="true"
+            strokeWidth={1}
+            className="pointer-events-none absolute top-16 left-[6%] size-16 -rotate-12 text-primary/10"
+          />
+          <PawPrint
+            aria-hidden="true"
+            strokeWidth={1}
+            className="pointer-events-none absolute top-40 left-[14%] size-12 rotate-6 text-primary/10"
+          />
+          <PawPrint
+            aria-hidden="true"
+            strokeWidth={1}
+            className="pointer-events-none absolute bottom-16 left-[22%] size-14 -rotate-3 text-primary/10"
+          />
+          <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-[1.05fr_0.95fr] md:py-24">
+            <div className="relative">
               <span className="inline-flex items-center gap-2 rounded-full bg-card px-3.5 py-1.5 text-sm font-semibold shadow-soft ring-1 ring-border">
                 <Star className="size-4 fill-rating text-rating" />
                 4,8 no Google · 401 avaliações
               </span>
-              <h1 className="mt-6 text-4xl leading-tight sm:text-5xl">
-                Cuidando do seu pet como parte da família, no Tibery, desde 2014
+              <h1 className="mt-6 text-[2.6rem] leading-[1.08] font-bold sm:text-6xl">
+                Cuidando do <span className="text-primary">seu pet</span> como parte da família,
+                no Tibery, desde 2014
               </h1>
               <p className="mt-5 max-w-xl text-lg text-muted-foreground">
                 Banho e tosa, rações e tudo para cães, gatos, pássaros e peixes. Um lugar
                 tranquilo e seguro para deixar quem você ama.
               </p>
-              <div className="mt-8">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <WhatsAppButton size="lg">Falar no WhatsApp</WhatsAppButton>
+                <a
+                  href="#localizacao"
+                  className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-primary bg-transparent px-8 py-4 text-base font-semibold text-primary transition hover:bg-primary-soft"
+                >
+                  <MapPin className="size-5" strokeWidth={1.75} />
+                  Como chegar
+                </a>
               </div>
               <p className="mt-5 text-sm text-muted-foreground">
                 Seg a sex, 8h às 18h30 · Sábado, 8h às 13h
               </p>
             </div>
-            <div className="frame-photo mx-auto w-full max-w-sm">
-              <img
-                src={spitzAsset.url}
-                width={783}
-                height={793}
-                alt="Lulu da Pomerânia com gravatinha vermelha após o banho e tosa no Pet Shop Uirapuru"
-                className="w-full object-cover"
-              />
+            <div className="relative mx-auto w-full max-w-sm">
+              <svg
+                viewBox="0 0 200 200"
+                aria-hidden="true"
+                className="pointer-events-none absolute -inset-10 -z-10 h-[125%] w-[125%] text-primary-soft"
+              >
+                <path
+                  fill="currentColor"
+                  d="M43.6 -61.7C56.1 -53.4 65.5 -40.3 70.3 -25.7C75.1 -11 75.4 5.2 70.2 19.1C65 33 54.4 44.6 42 54.4C29.5 64.2 15.2 72.2 -0.6 73C-16.4 73.8 -32.7 67.4 -46.5 57.2C-60.2 47 -71.4 33 -75.6 17.2C-79.8 1.3 -77 -16.4 -68.6 -30.4C-60.2 -44.3 -46.2 -54.6 -32 -62.2C-17.8 -69.8 -3.3 -74.8 10.8 -73.4C24.9 -72 31.1 -70 43.6 -61.7Z"
+                  transform="translate(100 100)"
+                />
+              </svg>
+              <div className="frame-photo">
+                <img
+                  src={spitzAsset.url}
+                  width={783}
+                  height={793}
+                  alt="Lulu da Pomerânia com gravatinha vermelha após o banho e tosa no Pet Shop Uirapuru"
+                  className="w-full object-cover"
+                />
+              </div>
+              <span className="absolute -top-4 -right-4 flex size-24 rotate-[-8deg] flex-col items-center justify-center rounded-full bg-primary text-center leading-tight font-display font-bold text-primary-foreground shadow-frame ring-4 ring-card">
+                <span className="text-[0.65rem] tracking-widest uppercase">Desde</span>
+                <span className="text-2xl">2014</span>
+              </span>
             </div>
           </div>
+          <Wave to="surface" />
         </section>
         <section className="bg-surface">
           <div className="mx-auto max-w-6xl px-5 py-20">
-            <h2 className="text-3xl sm:text-4xl">Nossos serviços</h2>
+            <h2 className="text-4xl font-bold sm:text-5xl">
+              Tudo pro <span className="text-primary">seu pet</span>, num lugar só
+            </h2>
             <p className="mt-3 max-w-xl text-muted-foreground">
               Cuidando do seu pet com amor desde 2014.
             </p>
@@ -265,20 +326,25 @@ function Index() {
               {SERVICES.map(({ icon: Icon, title, text }) => (
                 <article
                   key={title}
-                  className="rounded-3xl bg-card p-8 shadow-soft ring-1 ring-border/70"
+                  className="service-card rounded-3xl bg-card p-8 shadow-soft ring-1 ring-border/70"
                 >
-                  <Icon className="size-8 text-primary" strokeWidth={1.25} />
-                  <h3 className="mt-6 text-xl">{title}</h3>
+                  <span className="service-icon flex size-16 items-center justify-center rounded-full bg-primary-soft text-primary">
+                    <Icon className="size-8" strokeWidth={1.25} />
+                  </span>
+                  <h3 className="mt-6 text-xl font-bold">{title}</h3>
                   <p className="mt-3 text-muted-foreground">{text}</p>
                 </article>
               ))}
             </div>
           </div>
+          <Wave to="background" />
         </section>
         <section className="bg-background">
           <div className="mx-auto max-w-6xl px-5 py-20">
             <div className="max-w-2xl">
-              <h2 className="text-3xl sm:text-4xl">Nossa loja</h2>
+              <h2 className="text-4xl font-bold sm:text-5xl">
+                Nossa <span className="text-primary">loja</span>
+              </h2>
               <p className="mt-5 text-lg text-muted-foreground">
                 São mais de dez anos no Tibery atendendo as famílias do bairro e da região.
                 Nesse tempo aprendemos o nome dos pets, o horário que cada um prefere e o jeito
@@ -292,25 +358,28 @@ function Index() {
             </div>
             <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {GALLERY.map((photo, i) => (
-                <div
-                  key={photo.alt}
-                  className={`frame-photo ${i % 2 === 0 ? "tilt-a" : "tilt-b"}`}
-                >
-                  <img
-                    src={photo.src}
-                    alt={photo.alt}
-                    loading="lazy"
-                    width={768}
-                    height={1024}
-                    className="aspect-[3/4] w-full object-cover"
-                  />
-                </div>
+                <figure key={photo.alt}>
+                  <div className={`frame-photo ${i % 2 === 0 ? "tilt-a" : "tilt-b"}`}>
+                    <img
+                      src={photo.src}
+                      alt={photo.alt}
+                      loading="lazy"
+                      width={768}
+                      height={1024}
+                      className="aspect-[3/4] w-full object-cover"
+                    />
+                  </div>
+                  <figcaption className="mt-4 text-center font-hand text-2xl text-muted-foreground">
+                    {photo.caption}
+                  </figcaption>
+                </figure>
               ))}
             </div>
           </div>
         </section>
-        <section className="bg-surface">
-          <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 md:grid-cols-[auto_1fr] md:items-center">
+        <section className="bg-background">
+          <div className="mx-auto max-w-6xl px-5 pb-20">
+            <div className="grid gap-12 rounded-[2.5rem] bg-surface px-8 py-14 sm:px-14 md:grid-cols-[auto_1fr] md:items-center">
             <div className="text-center md:text-left">
               <p className="font-display text-7xl font-bold sm:text-8xl">4,8</p>
               <div className="mt-2 flex justify-center gap-1 md:justify-start">
@@ -320,7 +389,9 @@ function Index() {
               </div>
             </div>
             <div>
-              <h2 className="text-2xl sm:text-3xl">401 avaliações de quem confia seus pets aqui</h2>
+              <h2 className="text-3xl font-bold sm:text-4xl">
+                401 avaliações de quem <span className="text-primary">confia</span> seus pets aqui
+              </h2>
               <ul className="mt-6 space-y-2.5 text-muted-foreground">
                 {PRAISE.map((item) => (
                   <li key={item} className="flex items-start gap-3">
@@ -338,12 +409,15 @@ function Index() {
                 Ver avaliações no Google
               </a>
             </div>
+            </div>
           </div>
         </section>
         <section id="localizacao" className="scroll-mt-20 bg-background">
           <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 lg:grid-cols-2">
             <div>
-              <h2 className="text-3xl sm:text-4xl">Onde estamos</h2>
+              <h2 className="text-4xl font-bold sm:text-5xl">
+                Onde <span className="text-primary">estamos</span>
+              </h2>
               <dl className="mt-10 space-y-8">
                 <div>
                   <dt className="text-xs font-bold tracking-widest text-muted-foreground uppercase">
@@ -398,10 +472,13 @@ function Index() {
               />
             </div>
           </div>
+          <Wave to="surface" />
         </section>
         <section className="bg-surface">
           <div className="mx-auto max-w-3xl px-5 py-20">
-            <h2 className="text-3xl sm:text-4xl">Perguntas frequentes</h2>
+            <h2 className="text-4xl font-bold sm:text-5xl">
+              Perguntas <span className="text-primary">frequentes</span>
+            </h2>
             <div className="mt-10 space-y-4">
               {FAQ.map((item) => (
                 <details
@@ -414,6 +491,21 @@ function Index() {
                   <p className="mt-3 text-muted-foreground">{item.a}</p>
                 </details>
               ))}
+            </div>
+          </div>
+          <Wave to="background" />
+        </section>
+        <section className="bg-background">
+          <div className="mx-auto max-w-2xl px-5 pt-6 pb-24 text-center">
+            <h2 className="text-4xl font-bold sm:text-5xl">
+              Seu pet merece esse <span className="text-primary">carinho</span>
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Chame a gente no WhatsApp e agende o banho e tosa no horário que for melhor para
+              vocês dois.
+            </p>
+            <div className="mt-8 flex justify-center">
+              <WhatsAppButton size="lg">Falar no WhatsApp</WhatsAppButton>
             </div>
           </div>
         </section>
