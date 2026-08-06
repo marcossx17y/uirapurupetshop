@@ -264,8 +264,7 @@ function Index() {
                 4,8 no Google · 401 avaliações
               </span>
               <h1 className="mt-6 text-[2.6rem] leading-[1.08] font-bold sm:text-6xl">
-                Cuidando do <span className="text-primary">seu pet</span> como parte da família,
-                no Tibery, desde 2014
+                Seu pet cuidado <span className="text-primary">como família</span>, no Tibery
               </h1>
               <p className="mt-5 max-w-xl text-lg text-muted-foreground">
                 Banho e tosa, rações e tudo para cães, gatos, pássaros e peixes. Um lugar
