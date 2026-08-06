@@ -77,16 +77,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Pet Shop Uirapuru | Banho e Tosa em Uberlândia" },
+      {
+        name: "description",
+        content:
+          "Pet Shop Uirapuru no Tibery, Uberlândia, desde 2014. Banho e tosa, rações e entrega em domicílio. Nota 4,8 no Google. Seg a sex 8h às 18h30, sábado 8h às 13h.",
+      },
+      { name: "author", content: "Pet Shop Uirapuru" },
+      { property: "og:site_name", content: "Pet Shop Uirapuru" },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Quicksand:wght@600;700&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
