@@ -183,3 +183,19 @@
     border-radius: 1rem;
   }
 }
+
+@utility tilt-a {
+  rotate: -2deg;
+
+  &:hover {
+    rotate: 0deg;
+  }
+}
+
+@utility tilt-b {
+  rotate: 2deg;
+
+  &:hover {
+    rotate: 0deg;
+  }
+}
