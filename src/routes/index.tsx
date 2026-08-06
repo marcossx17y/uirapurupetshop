@@ -169,16 +169,14 @@ function WhatsAppIcon({ className }: { className?: string }) {
 function Logo() {
   return (
     <span className="flex items-center gap-2.5">
-      <span className="flex size-11 items-center justify-center rounded-2xl bg-card ring-1 ring-border">
-        <svg viewBox="0 0 40 40" className="size-7" aria-hidden="true">
-          <circle cx="12" cy="12" r="5" fill="#E23B3B" />
-          <circle cx="26" cy="10" r="5" fill="#2B9FDA" />
-          <circle cx="33" cy="22" r="4.5" fill="#3EA96B" />
-          <path
-            d="M20 20c5 0 9 4.2 9 8.6 0 3-2.2 5-5.3 5-1.6 0-2.6-.6-3.7-.6s-2.1.6-3.7.6c-3.1 0-5.3-2-5.3-5C11 24.2 15 20 20 20Z"
-            fill="#2B9FDA"
-          />
-        </svg>
+      <span className="flex size-11 items-center justify-center overflow-hidden rounded-2xl bg-card ring-1 ring-border">
+        <img
+          src={logoAsset.url}
+          alt="Logo do Pet Shop Uirapuru"
+          width={44}
+          height={44}
+          className="size-11 object-contain"
+        />
       </span>
       <span className="leading-tight">
         <span className="block font-display text-base font-bold">Pet Shop Uirapuru</span>
@@ -245,10 +243,10 @@ function Index() {
             </div>
             <div className="frame-photo mx-auto w-full max-w-sm">
               <img
-                src={spitz}
-                width={768}
-                height={1024}
-                alt="Spitz alemão branco com gravatinha vermelha após o banho no Pet Shop Uirapuru"
+                src={spitzAsset.url}
+                width={783}
+                height={793}
+                alt="Lulu da Pomerânia com gravatinha vermelha após o banho e tosa no Pet Shop Uirapuru"
                 className="w-full object-cover"
               />
             </div>
