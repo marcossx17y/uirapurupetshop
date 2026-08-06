@@ -2,10 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Bath, MapPin, PackageOpen, Star, Truck } from "lucide-react";
 import type { ReactNode } from "react";
 
-import spitz from "../assets/spitz.jpg";
-import galeria1 from "../assets/galeria-1.jpg";
-import galeria2 from "../assets/galeria-2.jpg";
-import galeria3 from "../assets/galeria-3.jpg";
+import logoAsset from "../assets/image.png.asset.json";
+import spitzAsset from "../assets/image-3.png.asset.json";
+import galeria1Asset from "../assets/image-2.png.asset.json";
+import galeria2Asset from "../assets/image-4.png.asset.json";
+import galeria3Asset from "../assets/image-5.png.asset.json";
 
 const SITE = "https://id-preview--c19f8844-df05-40d4-98f2-1c9b7135e778.lovable.app";
 const OG_IMAGE = `${SITE}/og-image.jpg`;
@@ -54,9 +55,18 @@ const SERVICES = [
 ];
 
 const GALLERY = [
-  { src: galeria1, alt: "Cachorro shih tzu tomando banho no Pet Shop Uirapuru" },
-  { src: galeria2, alt: "Gato atendido no balcão do Pet Shop Uirapuru" },
-  { src: galeria3, alt: "Corredor de rações e produtos do Pet Shop Uirapuru" },
+  {
+    src: galeria1Asset.url,
+    alt: "Lulu da Pomerânia tosado em cenário de futebol no Pet Shop Uirapuru",
+  },
+  {
+    src: galeria2Asset.url,
+    alt: "Chihuahua com chapéu de palha em cenário de festa junina no Pet Shop Uirapuru",
+  },
+  {
+    src: galeria3Asset.url,
+    alt: "Três shih tzus tosados em cenário de carnaval no Pet Shop Uirapuru",
+  },
 ];
 
 const PRAISE = [
