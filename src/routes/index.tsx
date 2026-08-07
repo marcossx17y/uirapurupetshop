@@ -2,13 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Bath, MapPin, PackageOpen, PawPrint, Star, Truck } from "lucide-react";
 import type { ReactNode } from "react";
 
-import logoAsset from "../assets/image.png.asset.json";
-import spitzAsset from "../assets/image-3.png.asset.json";
-import galeria1Asset from "../assets/image-2.png.asset.json";
-import galeria2Asset from "../assets/image-4.png.asset.json";
-import galeria3Asset from "../assets/image-5.png.asset.json";
+import logoImg from "../assets/image_1.png";
+import spitzImg from "../assets/image-3.png";
+import galeria1Img from "../assets/image-2.png";
+import galeria2Img from "../assets/image-4.png";
+import galeria3Img from "../assets/image-5.png";
 
-const SITE = "https://id-preview--c19f8844-df05-40d4-98f2-1c9b7135e778.lovable.app";
+const SITE = import.meta.env.VITE_SITE_URL ?? "https://uirapurupetshop.lovable.app";
 const OG_IMAGE = `${SITE}/og-image.jpg`;
 const WA =
   "https://wa.me/553432272527?text=" +
@@ -56,17 +56,17 @@ const SERVICES = [
 
 const GALLERY = [
   {
-    src: galeria1Asset.url,
+    src: galeria1Img,
     alt: "Lulu da Pomerânia tosado em cenário de futebol no Pet Shop Uirapuru",
     caption: "Torcedor oficial da casa",
   },
   {
-    src: galeria2Asset.url,
+    src: galeria2Img,
     alt: "Chihuahua com chapéu de palha em cenário de festa junina no Pet Shop Uirapuru",
     caption: "Pronto pra festa junina",
   },
   {
-    src: galeria3Asset.url,
+    src: galeria3Img,
     alt: "Três shih tzus tosados em cenário de carnaval no Pet Shop Uirapuru",
     caption: "Dia de banho, dia de festa",
   },
@@ -174,7 +174,7 @@ function Logo() {
     <span className="flex items-center gap-2.5">
       <span className="flex size-11 items-center justify-center overflow-hidden rounded-2xl bg-card ring-1 ring-border">
         <img
-          src={logoAsset.url}
+          src={logoImg}
           alt="Logo do Pet Shop Uirapuru"
           width={44}
           height={44}
@@ -298,7 +298,7 @@ function Index() {
               </svg>
               <div className="frame-photo relative">
                 <img
-                  src={spitzAsset.url}
+                  src={spitzImg}
                   width={783}
                   height={793}
                   alt="Lulu da Pomerânia com gravatinha vermelha após o banho e tosa no Pet Shop Uirapuru"
