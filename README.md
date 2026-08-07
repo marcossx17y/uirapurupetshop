@@ -2,6 +2,7 @@
 
 Reforme completamente o design deste site seguindo estas diretrizes à risca. O conteúdo é de um pet shop real — todos os dados abaixo são verdadeiros.
 
+
 ## CORREÇÃO DE DESIGN (o mais importante)
 A logo tem 3 cores (vermelho, azul e verde) — por isso o site NÃO pode usar as 3 espalhadas. Regras:
 - Fundo geral: branco #FFFFFF e off-white #F8FAFB alternando entre seções. Texto em cinza-escuro #1F2933.
