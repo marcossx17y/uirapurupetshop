@@ -1,6 +1,6 @@
 {
   // Configuração do deploy no Cloudflare Workers (build gerado pelo Nitro em .output/)
-  "name": "uirapuru-petshop",
+  "name": "uirapurupetshop",
   "compatibility_date": "2026-08-06",
   "main": ".output/server/index.mjs",
   "assets": {
